@@ -1,4 +1,4 @@
-# Sniff your Game Boy's LCD using a logic analyser
+# Sniff your Game Boy's LCD using a logic analyzer
 
 **or How to Take Screenshots the Hard Way.**
 
@@ -6,13 +6,13 @@ So, you want to immortalize your Tetris high score for future generations? You c
 
 But what fun is that?
 
-Wouldn't it be cool to crack open your old brick and peek at the data bus going to the LCD instead? Let's do it!
+Wouldn't it be cool to crack open your old brick, peek at the LCD data bus and extract the screenshot from there? Let's do it!
 
-![](images/foo.png) ![](images/mole.png) ![](images/q.png)
+![](images/intro.jpg)
 
 ## Before you begin
 
-You'll need a handfull of stuff to get started:
+You'll need a handful of stuff to get started:
 
 * An [Original Game Boy][dmg] to play with.
 
@@ -22,35 +22,36 @@ You'll need a handfull of stuff to get started:
 
 * [Logic Software][logic] for capturing and analyzing the data.
 
-This guide assumes you are using Saleae's logic analyzer and software but you don't have to. Use any logic analyzer and software you want.
+This guide assumes you are using Saleae's logic analyzer and software, but you don't have to. Use any logic analyzer and software you want.
 
-I think you will be able to follow along fine nevertheless but you may have to deviate from my instructions from time to time.
+I think you will be able to follow along fine nevertheless, but you may have to deviate from my instructions from time to time.
 
 ## Open up your Game Boy
 
-Opening up the Game Boy is easy! Once you've get hold of a tri-point screwdriver, that's it.
+Opening up the Game Boy is easy! Once you've got hold of a tri-point screwdriver, that's it.
 
 ![](images/screws.jpg)
 
-There are six screews on the back that needs loosing: four along the edges and two that you will find hiding behind the batteries, once you've removed them.
+There are six screws on the back that needs loosing: four along the edges and two that you will find hiding behind the batteries, once you've removed them.
 
 ## Connect test clips to data bus
 
-When the Game Boys guts are exposed you will see that the back and front PCBs are connected with a ribbon cable.
+When the Game Boys guts are exposed, you will see that the back and front PCBs are connected with a ribbon cable.
 
 ![](images/connections.jpg)
 
-You're going to tap into the connector on the back PCB using test clips of your Logic 8. If you squint your eyes hard enough, you may se that the contacts of the connector are numbered 1-21.
+You're going to tap into the connector on the back PCB using test clips of your Logic 8. If you squint your eyes hard enough, you may see that the contacts of the connector are numbered 1-21.
 
-Attach test clips to contact number 12, 14, 15, 16, 17 and 21 using the table below. Test clip number 3 (orange cable) goes to contact number 12, and so on.
+Attach test clips to contact number 12, 14, 15, 16, 17 and 21 using the table below. Test clip number 3 (orange cable) goes to contact number 12 (V-Sync), and so on.
 
-|    Contact:    |      12     |      13     |      14     |      15     |      16     |      17     |    [...]    |      21     |
-| :------------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
-|  **Function:** |    V‑Sync   |             | Pixel Clock |  LCD‑Data‑0 |  LCD‑Data‑1 |    H‑Sync   |             |    Ground   |
-| **Test clip:** |    **3**    |             |    **4**    |    **0**    |    **1**    |    **2**    |             |  **Ground** |
-|   **Color:**   |    Orange   |             |   Yellow    |    Black    |    Brown    |     Red     |             |    Black    |
 
-When you are done attaching test clips it should look something like this.
+|   Test clip:   |      3      |      4      |      0      |      1      |      2      |    Ground   |
+| :------------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
+|                |    Orange   |   Yellow    |    Black    |    Brown    |     Red     |    Black    |
+|  **Contact:**  |    **12**   |    **14**   |    **15**   |    **16**   |    **17**   |    **21**   |
+|                |    V‑Sync   | Pixel Clock |  LCD Data 0 |  LCD Data 1 |    H‑Sync   |    Ground   |
+
+When you are done attaching test clips, it should look something like this.
 
 ![](images/test-clips.jpg)
 
@@ -60,7 +61,7 @@ When you are done attaching test clips it should look something like this.
 
 ## Record them ones and zeroes
 
-Now when you're all hooked up it's time to connect the Logic 8 to your computer and fire up the Logic Software.
+Now when you're all hooked up, it's time to connect the Logic 8 to your computer and fire up the Logic Software.
 
 * Show a screenshot of my setup and link to the configuration.
 
