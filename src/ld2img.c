@@ -30,7 +30,7 @@ int main(int argc, char const *argv[]) {
       pixels++;
 
       c -= '0';
-      c = c ^ 0b11;
+      c = c ^ 3;
 
       fputc(c * 85, image);
     }
