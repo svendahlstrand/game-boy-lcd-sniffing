@@ -154,6 +154,10 @@ Thankfully it was an easy fix: I just had to select the correct channels for D0 
 
 That's more like it!
 
+## License
+
+This guide and its media assets are licensed under the [Creative Commons Attribution-ShareAlike 4.0 International][cc] license. Source code is licensed under the [MIT license][mit].
+
 [dmg]: https://en.wikipedia.org/wiki/Game_Boy
 [screwdriver]: https://en.wikipedia.org/wiki/List_of_screw_drives#Tri-point
 [saleae]: https://www.saleae.com
@@ -162,3 +166,5 @@ That's more like it!
 [pgm]: http://netpbm.sourceforge.net/doc/pgm.html
 [ld2img]: blob/master/src/ld2img.c
 [negative]: blob/master/src/ld2img.c#L33
+[cc]: https://creativecommons.org/licenses/by-sa/4.0/
+[mit]: https://choosealicense.com/licenses/mit/
