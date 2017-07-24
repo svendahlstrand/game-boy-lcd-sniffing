@@ -164,7 +164,7 @@ This guide and its media assets are licensed under the [Creative Commons Attribu
 [logic]: https://www.saleae.com/downloads
 [userguide]: http://support.saleae.com/hc/en-us/categories/201256716-Users-Guide-Documentation
 [pgm]: http://netpbm.sourceforge.net/doc/pgm.html
-[ld2img]: blob/master/src/ld2img.c
-[negative]: blob/master/src/ld2img.c#L33
+[ld2img]: src/ld2img.c
+[negative]: src/ld2img.c#L33
 [cc]: https://creativecommons.org/licenses/by-sa/4.0/
 [mit]: https://choosealicense.com/licenses/mit/
