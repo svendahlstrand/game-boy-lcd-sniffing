@@ -44,12 +44,14 @@ You're going to tap into the connector on the back PCB using test clips of your 
 
 Attach test clips to contact number 12, 14, 15, 16, 17 and 21 using the table below. Test clip number 3 (orange cable) goes to contact number 12 (V-Sync), and so on.
 
-
-|   Test clip:   |      3      |      4      |      0      |      1      |      2      |    Ground   |
-| :------------: | :---------: | :---------: | :---------: | :---------: | :---------: | :---------: |
-|                |    Orange   |   Yellow    |    Black    |    Brown    |     Red     |    Black    |
-|  **Contact:**  |    **12**   |    **14**   |    **15**   |    **16**   |    **17**   |    **21**   |
-|                |    V‑Sync   | Pixel Clock |  LCD Data 0 |  LCD Data 1 |    H‑Sync   |    Ground   |
+| Test clip |  Color | Connection | Function    |
+|:---------:|:------:|:----------:|-------------|
+| 0         | Black  | 15         | LCD Data 0  |
+| 1         | Brown  | 16         | LCD Data 1  |
+| 2         | Red    | 17         | H-Sync      |
+| 3         | Orange | 12         | V-Sync      |
+| 4         | Yellow | 14         | Pixel Clock |
+| GND       | Black  | 21         | Ground      |
 
 When you are done attaching test clips, it should look something like this.
 
