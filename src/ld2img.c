@@ -2,13 +2,15 @@
 #include <stdio.h>
 #include <stdio.h>
 
-int main(int argc, char const *argv[]) {
-  if (argc < 2) {
-    printf("Usage: %s <file> ...", argv[0]);
-    exit(0);
-  }
+const char *get_in_file(int argc, char const *argv[]);
+const char *get_out_file(int argc, char const *argv[]);
 
-  FILE* data = fopen(argv[1], "r");
+int main(int argc, char const *argv[]) {
+  const char* in_file = get_in_file(argc, argv);
+  const char* out_file = get_out_file(argc, argv);
+
+  FILE* data = fopen(in_file, "r");
+  FILE* image = out_file ? fopen(out_file, "w+") : stdout;
 
   if (!data) {
     perror("File opening failed");
@@ -19,44 +21,50 @@ int main(int argc, char const *argv[]) {
   int p = 'A';
   int pixels = 0;
 
-  puts("P2");
-  puts("160 144");
-  puts("3");
+  fputs("P5\n", image);
+  fputs("160 144\n", image);
+  fputs("255\n", image);
 
   while ((c = fgetc(data)) != EOF) {
     if (p == '\'' && c >= '0' && c <= '3'){
       pixels++;
 
-      switch (c) {
-        case '0':
-          c = '3';
-          break;
-        case '1':
-          c = '2';
-          break;
-        case '2':
-          c = '1';
-          break;
-        case '3':
-          c = '0';
-          break;
-      }
+      c -= '0';
+      c = c ^ 0b11;
 
-      putchar(c);
-
-      if (pixels % 160 == 0) {
-        putchar('\n');
-      }
-      else {
-        putchar(' ');
-      }
+      fputc(c * 85, image);
     }
 
     p = c;
-
   }
 
   fclose(data);
 
   return 0;
+}
+
+const char *get_in_file(int argc, char const *argv[]) {
+  switch (argc) {
+    case 4:
+      return argv[3];
+      break;
+    case 2:
+      return argv[1];
+      break;
+    default:
+      printf("USAGE: %s [-o <file>] <file>\n\n", argv[0]);
+      printf("OPTIONS:\n");
+      printf("  -o <file>\tWrite to <file> instead of stdout.");
+      exit(0);
+  }
+}
+
+const char *get_out_file(int argc, char const *argv[]) {
+  switch (argc) {
+    case 4:
+      return argv[2];
+      break;
+    default:
+      return NULL;
+  }
 }
