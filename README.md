@@ -83,7 +83,13 @@ Now when you're all hooked up, it's time to connect the Logic 8 to your computer
 * falling edge, not rising.
 * mixed up data 0 and data 1
 
-Show the screenshots.
+<img src="images/attempt-1.png" width="160" alt="" />
+
+<img src="images/attempt-2.png" width="160" alt="" />
+
+<img src="images/attempt-3.png" width="160" alt="" />
+
+<img src="images/attempt-4.png" width="160" alt="" />
 
 [dmg]: https://en.wikipedia.org/wiki/Game_Boy
 [screwdriver]: https://en.wikipedia.org/wiki/List_of_screw_drives#Tri-point
