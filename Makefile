@@ -1,10 +1,14 @@
+BIN_DIR=./bin
+BINARY=$(BIN_DIR)/ld2img
+SRC_FILE=./src/ld2img.c
+
 .PHONY: all clean
 
-all: ./bin/ld2img
+all: $(BINARY)
 
-./bin/ld2img: ./src/ld2img.c
-	mkdir -p ./bin
+$(BINARY): $(SRC_FILE)
+	mkdir -p $(BIN_DIR)
 	gcc -std=c99 -Wall -Wextra -Wpedantic -Werror -o $@ $^
 
 clean:
-	rm -rf ./bin
+	rm -rf $(BIN_DIR)
