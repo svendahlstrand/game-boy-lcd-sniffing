@@ -39,7 +39,7 @@ int main(int argc, char const *argv[]) {
 
   fclose(data);
 
-  return 0;
+  return EXIT_SUCCESS;
 }
 
 const char *get_in_file(int argc, char const *argv[]) {
@@ -54,7 +54,7 @@ const char *get_in_file(int argc, char const *argv[]) {
       printf("USAGE: %s [-o <file>] <file>\n\n", argv[0]);
       printf("OPTIONS:\n");
       printf("  -o <file>\tWrite to <file> instead of stdout.");
-      exit(0);
+      exit(EXIT_SUCCESS);
   }
 }
 
