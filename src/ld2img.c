@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdio.h>
 
 const char *get_in_file(int argc, char const *argv[]);
 const char *get_out_file(int argc, char const *argv[]);
