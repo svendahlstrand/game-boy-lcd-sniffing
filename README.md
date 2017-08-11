@@ -165,6 +165,6 @@ This guide and its media assets are licensed under the [Creative Commons Attribu
 [userguide]: http://support.saleae.com/hc/en-us/categories/201256716-Users-Guide-Documentation
 [pgm]: http://netpbm.sourceforge.net/doc/pgm.html
 [ld2img]: src/ld2img.c
-[negative]: src/ld2img.c#L33
+[negative]: https://github.com/svendahlstrand/game-boy-lcd-sniffing/blob/0b0ff83291510d8f6d199e116922f666dc79bc0d/src/ld2img.c#L33
 [cc]: https://creativecommons.org/licenses/by-sa/4.0/
 [mit]: https://choosealicense.com/licenses/mit/
